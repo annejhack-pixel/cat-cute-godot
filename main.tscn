@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource path="res://assets/Back.png" type="Texture2D" id=1]
+[ext_resource path="res://assets/Colega.png" type="Texture2D" id=2]
+[ext_resource path="res://assets/Maca.png" type="Texture2D" id=3]
+[ext_resource path="res://assets/Terra.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/Treemaca.png" type="Texture2D" id=5]
+[ext_resource path="res://assets/BalaoFala.png" type="Texture2D" id=6]
+[ext_resource path="res://main.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+size = Vector2(256, 256)
+
+[node name="Main" type="Node2D"]
+script = ExtResource(7)
+
+[node name="Back" type="Sprite2D" parent="."]
+texture = ExtResource(1)
+
+[node name="Colega" type="Sprite2D" parent="."]
+texture = ExtResource(2)
+position = Vector2(80, 320)
+scale = Vector2(0.9, 0.9)
+
+[node name="Fala" type="Node2D" parent="."]
+visible = false
+
+[node name="Balao" type="Sprite2D" parent="Fala"]
+texture = ExtResource(6)
+position = Vector2(180, 40)
+
+[node name="TextFala" type="Label" parent="Fala"]
+text = "..."
+position = Vector2(200, 60)
+size_flags_horizontal = 3
+
+[node name="Terra" type="Area2D" parent="."]
+position = Vector2(300, 360)
+
+[node name="Sprite" type="Sprite2D" parent="Terra"]
+texture = ExtResource(4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra"]
+shape = SubResource(1)
+
+[node name="BotaoMaca" type="TextureButton" parent="."]
+texture_normal = ExtResource(3)
+position = Vector2(20, 20)
+tooltip_text = "Plantar Maçã"
