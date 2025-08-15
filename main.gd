@@ -13,7 +13,7 @@ func _ready() -> void:
     botao_maca.pressed.connect(Callable(self, "_on_BotaoMaca_pressed"))
     terra_area.input_event.connect(Callable(self, "_on_Terra_input_event"))
     # fala inicial (podemos trocar pelo pack de falas que combinamos)
-    mostrar_fala("Oi! Sou o Colega. Toque no botão da maçã e depois na terra!")
+    mostrar_fala("Oi! Sou o Colega. Vou te ajudar a evoluir sua fazendinha!!! Toque no botão da maçã e depois na terra!")
 
 func mostrar_fala(texto: String, dur: float = 3.0) -> void:
     fala_label.text = texto
